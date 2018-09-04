@@ -90,11 +90,11 @@ def report(issues, show_urls=False):
     if show_urls:
         for i in issues:
             role = 'ghpull' if 'merged_at' in i else 'ghissue'
-            print(u'* :%s:`%d`: %s' % (role, i['number'],
-                                        i['title'].replace(u'`', u'``')))
+            print(u'* %s :%s:`%d`:' % (i['title'].replace(u'`', u'``'),
+                                       role, i['number'],))
     else:
         for i in issues:
-            print(u'* %d: %s' % (i['number'], i['title'].replace(u'`', u'``')))
+            print(u'* %s %d' % (i['title'].replace(u'`', u'``')), i['number'])
 
 #-----------------------------------------------------------------------------
 # Main script
